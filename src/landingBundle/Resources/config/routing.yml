@@ -1,0 +1,9 @@
+landing_homepage:
+    path:     /
+    defaults: { _controller: landingBundle:Default:index }
+landing_nombre:
+    path:     /imperio
+    defaults: { _controller: landingBundle:Default:imperio }
+landing_nombre:
+    path:     /rebelion
+    defaults: { _controller: landingBundle:Default:rebelion }

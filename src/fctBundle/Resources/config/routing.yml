@@ -1,0 +1,7 @@
+fct_homepage:
+    path:     /
+    defaults: { _controller: fctBundle:Default:index }
+
+all_empresa:
+    path:     /empresa/all
+    defaults: { _controller: fctBundle:Empresa:all }

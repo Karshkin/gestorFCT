@@ -1,0 +1,11 @@
+fct:
+    resource: "@fctBundle/Resources/config/routing.yml"
+    prefix:   /fct
+
+landing:
+    resource: "@landingBundle/Resources/config/routing.yml"
+    prefix:   /landing
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

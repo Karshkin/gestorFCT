@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Empresa Todo</title>
+    </head>
+    <body>
+
+        <table border = "1" align = "center">
+          <tr align = "center">
+                <td>#</td>
+                <td>Nombre</td>
+                <td>Dirección</td>
+                <td>Código Postal</td>
+                <td>Teléfono 1</td>
+          </tr>
+          {% for empresa in empresas %}
+          <tr align = "center">
+                <td>{{ empresa.id }}</td>
+                <td>{{ empresa.nombre }}</td>
+                <td>{{ empresa.direccion }}</td>
+                <td>{{ empresa.cp }}</td>
+                <td>{{ empresa.telefono1 }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+
+    </body>
+</html>
