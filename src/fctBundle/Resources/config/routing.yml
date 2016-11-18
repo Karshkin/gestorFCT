@@ -5,3 +5,37 @@ fct_homepage:
 all_empresa:
     path:     /empresa/all
     defaults: { _controller: fctBundle:Empresa:all }
+
+empresa_crear:
+    path:     /empresa/crear
+    defaults: { _controller: fctBundle:Empresa:crearEmpresa }
+
+empresa_buscar:
+    path:     /empresaPorId/{id}
+    defaults: { _controller: fctBundle:Empresa:buscarEmpresa,id:1 }
+
+empresaPorNombre_buscar:
+    path:     /empresaPorNombre/{nombre}
+    defaults: { _controller: fctBundle:Empresa:buscarEmpresaPorNombre,nombre:'Pepe' }
+
+nuevo_empresa:
+    path:     /empresa/nuevo
+    defaults: { _controller: fctBundle:Empresa:nuevo }
+
+exito_empresa:
+    path:     /empresa/msgExito
+    defaults: { _controller: fctBundle:Empresa:msgExito }
+
+all_alumno:
+    path:     /alumno/all
+    defaults: { _controller: fctBundle:Alumno:all }
+
+api:
+    path:     /empresa
+    defaults: { _controller: fctBundle:Api:empresas }
+    methods: [GET]
+
+api_nuevo:
+    path:     /empresa
+    defaults: { _controller: fctBundle:Api:nuevo }
+    methods: [POST]

@@ -45,7 +45,7 @@ class Empresa
     /**
      * @var string
      *
-     * @ORM\Column(name="telefono21", type="string", length=255)
+     * @ORM\Column(name="telefono1", type="string", length=255)
      */
     private $telefono1;
 
@@ -64,7 +64,7 @@ class Empresa
     private $fecha;
 
     /**
-      * @ORM\OneToMany(targetEntity="Alumno", mappedBy="empresa")
+      * @ORM\OneToMany(targetEntity="Alumno", mappedBy="evento")
       */
 
     private $alumno;
@@ -222,46 +222,5 @@ class Empresa
     public function getFecha()
     {
         return $this->fecha;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->alumno = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add alumno
-     *
-     * @param \fctBundle\Entity\Alumno $alumno
-     *
-     * @return Empresa
-     */
-    public function addAlumno(\fctBundle\Entity\Alumno $alumno)
-    {
-        $this->alumno[] = $alumno;
-
-        return $this;
-    }
-
-    /**
-     * Remove alumno
-     *
-     * @param \fctBundle\Entity\Alumno $alumno
-     */
-    public function removeAlumno(\fctBundle\Entity\Alumno $alumno)
-    {
-        $this->alumno->removeElement($alumno);
-    }
-
-    /**
-     * Get alumno
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAlumno()
-    {
-        return $this->alumno;
     }
 }
