@@ -160,4 +160,28 @@ class Alumno
     {
         return $this->ciclo;
     }
+
+    /**
+     * Set empresa
+     *
+     * @param \fctBundle\Entity\Empresa $empresa
+     *
+     * @return Alumno
+     */
+    public function setEmpresa(\fctBundle\Entity\Empresa $empresa = null)
+    {
+        $this->empresa = $empresa;
+
+        return $this;
+    }
+
+    /**
+     * Get empresa
+     *
+     * @return \fctBundle\Entity\Empresa
+     */
+    public function getEmpresa()
+    {
+        return $this->empresa;
+    }
 }

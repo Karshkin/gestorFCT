@@ -39,3 +39,15 @@ api_nuevo:
     path:     /empresa
     defaults: { _controller: fctBundle:Api:nuevo }
     methods: [POST]
+
+registro_usuario:
+    path:     /user/registro
+    defaults: { _controller: fctBundle:User:register }
+
+login_usuario:
+    path:     /user/login
+    defaults: { _controller: fctBundle:User:login }
+
+usuario:
+    path:     /user
+    defaults: { _controller: fctBundle:User:user }

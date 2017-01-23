@@ -1,6 +1,14 @@
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+pig:
+    resource: "@PIGBundle/Resources/config/routing.yml"
+    prefix:   /pig
+
 fct:
     resource: "@fctBundle/Resources/config/routing.yml"
-    prefix:   /fct
+    prefix:   /
 
 landing:
     resource: "@landingBundle/Resources/config/routing.yml"

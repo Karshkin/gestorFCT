@@ -45,7 +45,7 @@ class Empresa
     /**
      * @var string
      *
-     * @ORM\Column(name="telefono21", type="string", length=255)
+     * @ORM\Column(name="telefono1", type="string", length=255)
      */
     private $telefono1;
 
