@@ -4,6 +4,7 @@ namespace fctBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * User
  *
@@ -25,6 +26,13 @@ class User implements UserInterface
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=255, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 4,
+     *      max = 32,
+     *      minMessage = "El campo username debe tener como minimo 4 caracteres",
+     *      maxMessage = "El campo username debe tener como máximo 32 caracteres"
+     * )
      */
     private $username;
 
@@ -32,6 +40,11 @@ class User implements UserInterface
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Email(
+     *     message = "No es un email correcto",
+     *     checkMX = true
+     * )
      */
     private $email;
 
@@ -39,10 +52,33 @@ class User implements UserInterface
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=64)
+     * @Assert\NotBlank()
      */
     private $password;
 
-
+    /**
+   * @Assert\NotBlank(
+   * )
+   * @Assert\Regex(
+   *     pattern="/^.*[A-Z]+.*$/",
+   *     match=true,
+   *     message="Usa al menos una mayuscula"
+   * )
+   * @Assert\Regex(
+   *     pattern="/^.*[0-9].*$/",
+   *     match=true,
+   *     message="Usa al menos un numero"
+   * )
+   * @Assert\Regex(
+   *     pattern="/^.*[a-z].*$/",
+   *     match=true,
+   *     message="Usa al menos una minuscula"
+   * )
+   * @Assert\Length(
+   *      min = 8,
+   *      minMessage = "Usa al menos 8 caracteres"
+   * )
+   */
    private $plainPassword;
 
     /**

@@ -11,12 +11,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller
 {
-  /**
-     * @Route("/user", name="user")
-     */
     public function userAction()
     {
-      return $this->render('fctBundle:Default:index.html.twig');
+      return $this->render('fctBundle:User:index.html.twig');
     }
 
     public function registerAction(Request $request)
@@ -50,9 +47,6 @@ class UserController extends Controller
             array('form' => $form->createView())
         );
     }
-    /**
-     * @Route("/user/login", name="login")
-     */
     public function loginAction(Request $request)
     {
         $authenticationUtils = $this->get('security.authentication_utils');

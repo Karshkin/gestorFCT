@@ -17,3 +17,6 @@ landing:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+logout:
+    path: "user/logout"

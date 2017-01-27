@@ -7,6 +7,14 @@ security:
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
+        all_users:
+            chain:
+                providers: [db_users, in_memory]
+
+        db_users:
+            entity:
+                class: fctBundle:User
+                property: username
         in_memory:
             memory:
                 users:
@@ -25,14 +33,21 @@ security:
         user:
           pattern: ^/user
           anonymous: ~
-          provider: in_memory
+          provider: db_users
           form_login:
               login_path: /user/login
               check_path: /user/login
+              default_target_path: /user
+          logout:
+                path:   /user/logout
+                target: /user
         main:
-            anonymous: ~
+          anonymous: ~
 
-  
+    access_control:
+            - { path: ^/user/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/user/registro, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/user, roles: ROLE_USER }
             # activate different ways to authenticate
 
             # http_basic: ~
