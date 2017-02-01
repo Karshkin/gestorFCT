@@ -2,10 +2,6 @@ admin:
     resource: "@AdminBundle/Resources/config/routing.yml"
     prefix:   /admin
 
-pig:
-    resource: "@PIGBundle/Resources/config/routing.yml"
-    prefix:   /pig
-
 fct:
     resource: "@fctBundle/Resources/config/routing.yml"
     prefix:   /
@@ -20,3 +16,7 @@ app:
 
 logout:
     path: "user/logout"
+
+user_admin:
+    path: "/user/admin"
+    defaults: { _controller: fctBundle:User:admin }

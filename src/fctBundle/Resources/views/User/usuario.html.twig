@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+  {% block body %}
+  Logeado
+  <a href="user/logout">Logout</a>
+    {% if is_granted('ROLE_ADMIN') %}
+    <a href="user/admin">Admin Zone</a>
+    {% endif %}
+  {% endblock %}

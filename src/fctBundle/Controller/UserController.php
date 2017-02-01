@@ -8,12 +8,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class UserController extends Controller
 {
     public function userAction()
     {
-      return $this->render('fctBundle:User:index.html.twig');
+      return $this->render('fctBundle:User:usuario.html.twig');
     }
 
     public function registerAction(Request $request)
@@ -27,10 +28,11 @@ class UserController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             // 3) Encode the password (you could also do this via Doctrine listener)
-            $password = $this->get('security.password_encoder')
-                ->encodePassword($user, $user->getPlainPassword());
+            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($password);
 
+            $roles = ["ROLE_USER"];
+            $user->setRoles($roles);
             // 4) save the User!
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
@@ -62,5 +64,13 @@ class UserController extends Controller
             'error'         => $error,
         ));
     }
+
+        /**
+        * @Security("has_role('ROLE_ADMIN')")
+        */
+        public function adminAction()
+        {
+           return $this->render('fctBundle:Default:index.html.twig');
+        }
 }
 ?>

@@ -4,7 +4,6 @@ imports:
     - { resource: services.yml }
     - { resource: "@landingBundle/Resources/config/services.yml" }
     - { resource: "@fctBundle/Resources/config/services.yml" }
-    - { resource: "@PIGBundle/Resources/config/services.yml" }
     - { resource: "@AdminBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed

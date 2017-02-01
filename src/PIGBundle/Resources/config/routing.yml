@@ -1,3 +1,0 @@
-pig_homepage:
-    path:     /
-    defaults: { _controller: PIGBundle:Default:index }
