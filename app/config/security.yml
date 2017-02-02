@@ -50,6 +50,8 @@ security:
             - { path: ^/user, roles: ROLE_USER }
             - { path: ^/admin, roles: ROLE_ADMIN }
             - { path: ^/user/admin, roles: ROLE_ADMIN }
+            - { path: ^/user/config, roles: ROLE_SUPER_ADMIN }
+            - { path: ^/user/config_nuevo, roles: ROLE_SUPER_ADMIN }
             # activate different ways to authenticate
 
             # http_basic: ~

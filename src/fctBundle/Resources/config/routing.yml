@@ -51,3 +51,11 @@ login_usuario:
 usuario:
     path:     /user
     defaults: { _controller: fctBundle:User:user }
+
+config:
+    path:     /user/config
+    defaults: { _controller: fctBundle:Conf:conf }
+
+config_nuevo:
+    path:     /user/config/config_nuevo
+    defaults: { _controller: fctBundle:Conf:nuevo }

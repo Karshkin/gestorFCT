@@ -5,4 +5,7 @@
     {% if is_granted('ROLE_ADMIN') %}
     <a href="user/admin">Admin Zone</a>
     {% endif %}
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+    <a href="user/config">Configuraciones</a>
+    {% endif %}
   {% endblock %}

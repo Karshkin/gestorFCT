@@ -1,26 +1,26 @@
 {% extends '::base.html.twig' %}
 
-      {% block body %}
+{% block body %}
 
-        <table border = "1" align = "center">
-          <tr align = "center">
-                <td>#</td>
-                <td>Nombre</td>
-                <td>Apellido 1</td>
-                <td>Apellido 2</td>
-                <td>Ciclo</td>
-                <td>Nombre de la Empresa</td>
-          </tr>
-          {% for alumno in alumnos %}
-          <tr align = "center">
+    <table border="1" align="center">
+        <tr align="center">
+            <td>#</td>
+            <td>Nombre</td>
+            <td>Apellido 1</td>
+            <td>Apellido 2</td>
+            <td>Ciclo</td>
+            <td>Nombre de la Empresa</td>
+        </tr>
+        {% for alumno in alumnos %}
+            <tr align="center">
                 <td>{{ alumno.id }}</td>
                 <td>{{ alumno.nombre }}</td>
                 <td>{{ alumno.apellido1 }}</td>
                 <td>{{ alumno.apellido2 }}</td>
                 <td>{{ alumno.ciclo }}</td>
                 <td>{{ alumno.empresa.nombre }}</td>
-          </tr>
-          {% endfor %}
-        </table>
+            </tr>
+        {% endfor %}
+    </table>
 
-        {% endblock %}
+{% endblock %}
